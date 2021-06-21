@@ -33,7 +33,11 @@ function createMultiArray(fillWith, dimensions){
       array[row] = new Array(dim);
       for (let col = 0; col < dim; col++){
         if (fill != undefined){
-          array[row][col] = fill;
+          if (fill.constructor == Object) {
+            array[row][col] = Object.assign({}, fill);
+          } else {
+            array[row][col] = fill;
+          }
         }
       }
     }
