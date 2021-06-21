@@ -30,6 +30,7 @@ function createMultiArray(fillWith, dimensions){
   } else {
     array = new Array(dim);
     for (let row = 0; row < dim; row++){
+      array[row] = new Array(dim);
       for (let col = 0; col < dim; col++){
         if (fill != undefined){
           array[row][col] = fill;
